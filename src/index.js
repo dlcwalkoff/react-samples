@@ -1,8 +1,19 @@
 import * as React from 'react';
 
-import {Timer} from 'timer/component.jsx';
+import {Timer} from 'timer/component.js';
 import {Menu} from 'menu/component.js';
 import {RealTimeSearch} from 'realTimeSearch/component.js';
+import {ServiceChooser} from 'orderForm/ServiceChooser.js';
+
+React.render(
+    <Timer start={Date.now()} />,
+    document.getElementById('timer')
+);
+
+React.render(
+    <Menu items={ ['Home', 'Services', 'About', 'Contact us'] } />,
+    document.getElementById('menu')
+);
 
 let libraries = [
     { name: 'Backbone.js', url: 'http://documentcloud.github.io/backbone/'},
@@ -22,16 +33,18 @@ let libraries = [
 ];
 
 React.render(
-    <Timer start={Date.now()} />,
-    document.getElementById('timer')
-);
-
-React.render(
-    <Menu items={ ['Home', 'Services', 'About', 'Contact us'] } />,
-    document.getElementById('menu')
-);
-
-React.render(
     <RealTimeSearch items={libraries}></RealTimeSearch>,
     document.getElementById('realTimeSearch')
+);
+
+var services = [
+    { name: 'Web Development', price: 300 },
+    { name: 'Design', price: 400 },
+    { name: 'Integration', price: 250 },
+    { name: 'Training', price: 220 }
+];
+
+React.render(
+    <ServiceChooser items={services} />,
+    document.getElementById('orderForm')
 );

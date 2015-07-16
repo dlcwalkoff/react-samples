@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 
 module.exports = {
-    entry: ['./src/index.jsx'],
+    entry: ['./src/index.js'],
     output: {
         path: './app/',
         filename: 'bundle.js'
@@ -16,7 +16,7 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.jsx|js?$/,
+                test: /\.js?$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel',
                 query: {

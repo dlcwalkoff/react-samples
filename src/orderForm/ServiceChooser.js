@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Service} from 'Service.jsx';
+import {Service} from './Service.js';
 
 export class ServiceChooser extends React.Component {
     constructor() {
