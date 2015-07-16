@@ -1,0 +1,49 @@
+/*main*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font: 18px normal Arial, sans-serif;
+    color: #626771;
+}
+
+body{
+    padding: 60px;
+    text-align: center;
+}
+
+#menu, #timer {
+    margin-bottom: 10vh;
+}
+
+/*menu*/
+#menu ul{
+    list-style:none;
+    display: inline-block;
+}
+
+#menu ul li{
+    display: inline-block;
+    padding: 10px 20px;
+    cursor:pointer;
+    background-color:#eee;
+    color:#7B8585;
+
+    transition:0.3s;
+}
+
+#menu ul li:hover{
+    background-color:#beecea;
+}
+
+#menu ul li.focused{
+    color:#fff;
+    background-color:#41c7c2;
+}
+
+#menu p{
+    padding-top:15px;
+    font-size:14px;
+}
