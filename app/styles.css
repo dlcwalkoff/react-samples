@@ -14,7 +14,7 @@ body{
     text-align: center;
 }
 
-#menu, #timer {
+#menu, #timer, #realTimeSearch, #orderForm {
     margin-bottom: 10vh;
 }
 
