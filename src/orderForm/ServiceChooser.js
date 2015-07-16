@@ -27,7 +27,7 @@ export class ServiceChooser extends React.Component {
 
     renderServices() {
         return this.props.items.map((service: object) => {
-            return <Service name={service.name} price={service.price} active={service.active} addTotal={self.addTotal} />;
+            return <Service name={service.name} price={service.price} active={service.active} addTotal={this.addTotal} />;
         });
     }
 
