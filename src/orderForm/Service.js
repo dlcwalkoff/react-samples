@@ -1,6 +1,11 @@
 import * as React from 'react';
 
 export class Service extends React.Component {
+    static propTypes = {
+        name: React.PropTypes.string,
+        price: React.PropTypes.number
+    }
+
     constructor() {
         super();
 
@@ -9,10 +14,10 @@ export class Service extends React.Component {
         };
 
         //bind
-        this.clickHandler = this.clickHandler.bind(this);
+        //this.clickHandler = this.clickHandler.bind(this);
     }
 
-    clickHandler() {
+    clickHandler = () => {
         let active = !this.state.active;
 
         this.setState({active});
