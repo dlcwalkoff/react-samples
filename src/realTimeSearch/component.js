@@ -6,7 +6,10 @@ export class RealTimeSearch extends React.Component {
 
         this.state = {
             searchString: ''
-        }
+        };
+
+        //bind
+        this.handleChange = this.handleChange.bind(this);
     }
 
     /**
@@ -15,7 +18,6 @@ export class RealTimeSearch extends React.Component {
     handleChange(e: object) {
         let newValue = e.target.value;
 
-        //TODO: не обновляется стейт? -> Не меняется значение в связанном инпуте
         this.setState({
             searchString: newValue
         })
