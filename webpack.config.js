@@ -1,16 +1,20 @@
 var webpack = require('webpack');
 
 module.exports = {
-    entry: ['./src/index.js'],
+    entry: {
+        samples: './src/samples/index.js',
+        benchmark: './src/benchmark/index.js'
+    },
     output: {
         path: './app/',
-        filename: 'bundle.js'
+        filename: '[name].bundle.js',
+        chunkFilename: '[id].bundle.js'
     },
     plugins: [
         new webpack.ProvidePlugin({})
     ],
     resolve: {
-        modulesDirectories: ['src', 'node_modules'],
+        modulesDirectories: ['src/samples', 'src/benchmark', 'node_modules'],
         alias: {}
     },
     module: {
