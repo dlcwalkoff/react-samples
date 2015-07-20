@@ -1,25 +1,29 @@
 import * as React from 'react';
 
 export class Menu extends React.Component {
+    static propTypes = {
+        items: React.PropTypes.arrayOf(React.PropTypes.object)
+    }
+
     constructor() {
         super();
 
         this.state = {
             focused: 0
         };
-
-        //bind
-        this.clicked = this.clicked.bind(this);
-        this.renderList = this.renderList.bind(this);
     }
 
-    clicked(index: number) {
+    /**
+     *
+     * @param index {number}
+     */
+    clicked = (index: number) => {
         this.setState({
             focused: index
         });
     }
 
-    renderList() {
+    renderList = () => {
         return this.props.items.map((val, index) => {
             let style = '';
 
