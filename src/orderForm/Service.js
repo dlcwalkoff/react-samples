@@ -1,9 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 
 export class Service extends React.Component {
     static propTypes = {
         name: React.PropTypes.string,
-        price: React.PropTypes.number
+        price: React.PropTypes.number,
+        addTotal: React.PropTypes.func
     }
 
     constructor() {
@@ -12,9 +13,6 @@ export class Service extends React.Component {
         this.state = {
             active: false
         };
-
-        //bind
-        //this.clickHandler = this.clickHandler.bind(this);
     }
 
     clickHandler = () => {
