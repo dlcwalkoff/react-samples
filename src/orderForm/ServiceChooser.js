@@ -3,29 +3,29 @@ import * as React from 'react';
 import {Service} from './Service.js';
 
 export class ServiceChooser extends React.Component {
+    static propTypes = {
+        items: React.PropTypes.arrayOf(React.PropTypes.object)
+    }
+
     constructor() {
         super();
 
         this.state = {
             total: 0
         };
-
-        //bind
-        this.addTotal = this.addTotal.bind(this);
-        this.renderServices = this.renderServices.bind(this);
     }
 
     /**
      *
      * @param price {number}
      */
-    addTotal(price: number) {
+    addTotal = (price: number) => {
         this.setState({
             total: this.state.total + price
         });
     }
 
-    renderServices() {
+    renderServices = () => {
         return this.props.items.map((service: object) => {
             return <Service name={service.name} price={service.price} active={service.active} addTotal={this.addTotal} />;
         });
