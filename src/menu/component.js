@@ -2,7 +2,7 @@ import * as React from 'react';
 
 export class Menu extends React.Component {
     static propTypes = {
-        items: React.PropTypes.arrayOf(React.PropTypes.object)
+        items: React.PropTypes.arrayOf(React.PropTypes.string)
     }
 
     constructor() {
