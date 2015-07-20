@@ -26,6 +26,9 @@ module.exports = {
                 query: {
                     stage: 0
                 }
+            }, {
+                test: /\.json$/,
+                loader: 'json'
             }
         ]
     }
