@@ -1,15 +1,16 @@
 import * as React from 'react';
 
 export class Timer extends React.Component {
+    static propTypes = {
+        start: React.PropTypes.number
+    }
+
     constructor() {
         super();
 
         this.state = {
             elapsed: 0
         };
-
-        //auto bind
-        this.tick = this.tick.bind(this);
     }
 
     componentDidMount() {
@@ -20,7 +21,7 @@ export class Timer extends React.Component {
         clearInterval(this.timer);
     }
 
-    tick() {
+    tick = () => {
         let newTime = new Date() - this.props.start;
 
         this.setState({

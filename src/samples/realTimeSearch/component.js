@@ -1,21 +1,22 @@
 import * as React from 'react';
 
 export class RealTimeSearch extends React.Component {
+    static propTypes = {
+        items: React.PropTypes.arrayOf(React.PropTypes.object)
+    }
+
     constructor() {
         super();
 
         this.state = {
             searchString: ''
         };
-
-        //bind
-        this.handleChange = this.handleChange.bind(this);
     }
 
     /**
      * @param e {object} event-object
      */
-    handleChange(e: object) {
+    handleChange = (e: object) => {
         let newValue = e.target.value;
 
         this.setState({
